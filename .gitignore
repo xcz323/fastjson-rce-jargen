@@ -1,0 +1,25 @@
+# 生成的恶意 jar / 输出目录 —— 不要提交
+/out/
+/www/
+*.jar
+*.class
+
+# 自定义命令文件（可能含真实 IP / 端口，按需排除）
+cmd*.local.txt
+shell_cmd.local.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 临时产物
+*.log
+nul
