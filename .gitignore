@@ -4,9 +4,10 @@
 *.jar
 *.class
 
-# 自定义命令文件（可能含真实 IP / 端口，按需排除）
+# 自定义命令文件（含真实 IP / 端口 / 回连命令，不要提交）
+shell_cmd.txt
+*_cmd.txt
 cmd*.local.txt
-shell_cmd.local.txt
 
 # Python
 __pycache__/

