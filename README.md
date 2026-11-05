@@ -1,6 +1,6 @@
 # fastjson-rce-jargen
 
-纯 Python 实现的 **fastjson `@JSONType` 恶意 jar 生成器**，用于复现 fastjson 1.2.80 / 1.2.83 的 autotype 绕过 → 远程代码执行链。
+纯 Python 实现的 **fastjson `@JSONType`  jar 生成器**，用于复现 fastjson 1.2.80 / 1.2.83 的 autotype 绕过 → 远程代码执行链。
 
 不依赖 JDK、不依赖 ASM：脚本直接按 JVM 规范手拼 `.class` 字节码，再用标准库 `zipfile` 打包成 jar。
 
